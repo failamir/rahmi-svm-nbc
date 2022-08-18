@@ -36,6 +36,9 @@
                             {{ trans('cruds.dataset.fields.sentimen') }}
                         </th>
                         <th>
+                            {{ trans('cruds.dataset.fields.dataset') }}
+                        </th>
+                        <th>
                             &nbsp;
                         </th>
                     </tr>
@@ -54,6 +57,13 @@
                             </td>
                             <td>
                                 {{ $dataset->sentimen ?? '' }}
+                            </td>
+                            <td>
+                                @if($dataset->dataset)
+                                    <a href="{{ $dataset->dataset->getUrl() }}" target="_blank">
+                                        {{ trans('global.view_file') }}
+                                    </a>
+                                @endif
                             </td>
                             <td>
                                 @can('dataset_show')

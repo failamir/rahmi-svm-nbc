@@ -27,6 +27,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     // Dataset
     Route::delete('datasets/destroy', 'DatasetController@massDestroy')->name('datasets.massDestroy');
+    Route::post('datasets/media', 'DatasetController@storeMedia')->name('datasets.storeMedia');
+    Route::post('datasets/ckmedia', 'DatasetController@storeCKEditorImages')->name('datasets.storeCKEditorImages');
     Route::post('datasets/parse-csv-import', 'DatasetController@parseCsvImport')->name('datasets.parseCsvImport');
     Route::post('datasets/process-csv-import', 'DatasetController@processCsvImport')->name('datasets.processCsvImport');
     Route::resource('datasets', 'DatasetController');
