@@ -28,7 +28,7 @@ class HomeController
 
         $settings2 = [
             'chart_title'        => 'Klasifikasi SVM',
-            'chart_type'         => 'line',
+            'chart_type'         => 'pie',
             'report_type'        => 'group_by_string',
             'model'              => 'App\Models\Svm',
             'group_by_field'     => 'hasil',

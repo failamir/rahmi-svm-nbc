@@ -39,6 +39,18 @@
                             {{ $dataset->sentimen }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.dataset.fields.dataset') }}
+                        </th>
+                        <td>
+                            @if($dataset->dataset)
+                                <a href="{{ $dataset->dataset->getUrl() }}" target="_blank">
+                                    {{ trans('global.view_file') }}
+                                </a>
+                            @endif
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">
