@@ -2,6 +2,7 @@
 
 Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', 'middleware' => ['auth:sanctum']], function () {
     // Dataset
+    Route::post('datasets/media', 'DatasetApiController@storeMedia')->name('datasets.storeMedia');
     Route::apiResource('datasets', 'DatasetApiController');
 
     // Text Preprocessing
