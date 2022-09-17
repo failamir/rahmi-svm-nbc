@@ -8,6 +8,7 @@ use App\Http\Requests\MassDestroyTextPreprocessingRequest;
 use App\Http\Requests\StoreTextPreprocessingRequest;
 use App\Http\Requests\UpdateTextPreprocessingRequest;
 use App\Models\TextPreprocessing;
+use App\Models\Dataset;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,6 +38,16 @@ class TextPreprocessingController extends Controller
         $textPreprocessing = TextPreprocessing::create($request->all());
 
         return redirect()->route('admin.text-preprocessings.index');
+    }
+
+    public function process(StoreTextPreprocessingRequest $request)
+    {
+        $textPreprocessing = TextPreprocessing::create($request->all());
+
+        return redirect()->route('admin.text-preprocessings.index');
+
+        $py = env('PYPATH',);
+        $andri = exec("'$py' Proses.py '$a' '$b' '$date'  2>&1", $out, $ret);
     }
 
     public function edit(TextPreprocessing $textPreprocessing)

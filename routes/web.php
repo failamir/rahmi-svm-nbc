@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('text-preprocessings/destroy', 'TextPreprocessingController@massDestroy')->name('text-preprocessings.massDestroy');
     Route::post('text-preprocessings/parse-csv-import', 'TextPreprocessingController@parseCsvImport')->name('text-preprocessings.parseCsvImport');
     Route::post('text-preprocessings/process-csv-import', 'TextPreprocessingController@processCsvImport')->name('text-preprocessings.processCsvImport');
+    Route::post('text-preprocessings/process', 'TextPreprocessingController@process')->name('text-preprocessings.process');
     Route::resource('text-preprocessings', 'TextPreprocessingController');
 
     // Nbc

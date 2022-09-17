@@ -3,13 +3,14 @@
 @can('text_preprocessing_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
-            <a class="btn btn-success" href="{{ route('admin.text-preprocessings.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.textPreprocessing.title_singular') }}
+            <a class="btn btn-success" href="{{ route('admin.text-preprocessings.process') }}">
+                {{-- {{ trans('global.add') }} {{ trans('cruds.textPreprocessing.title_singular') }} --}}
+                {{ 'Proses TextPreprocessing' }}
             </a>
-            <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
+            {{-- <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
             </button>
-            @include('csvImport.modal', ['model' => 'TextPreprocessing', 'route' => 'admin.text-preprocessings.parseCsvImport'])
+            @include('csvImport.modal', ['model' => 'TextPreprocessing', 'route' => 'admin.text-preprocessings.parseCsvImport']) --}}
         </div>
     </div>
 @endcan
@@ -26,9 +27,9 @@
                         <th width="10">
 
                         </th>
-                        <th>
+                        {{-- <th>
                             {{ trans('cruds.textPreprocessing.fields.id') }}
-                        </th>
+                        </th> --}}
                         <th>
                             {{ trans('cruds.textPreprocessing.fields.tweet') }}
                         </th>
@@ -43,9 +44,9 @@
                             <td>
 
                             </td>
-                            <td>
+                            {{-- <td>
                                 {{ $textPreprocessing->id ?? '' }}
-                            </td>
+                            </td> --}}
                             <td>
                                 {{ $textPreprocessing->tweet ?? '' }}
                             </td>
